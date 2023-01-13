@@ -3,9 +3,9 @@ name: リリース公開
 
 on:
   push:
-    tags:
-      - 'v*'
-#     branches: [ master ]
+#     tags:
+#       - 'v*'
+    branches: [ master ]
 #   pull_request:
 #     branches: [ master ]
 
