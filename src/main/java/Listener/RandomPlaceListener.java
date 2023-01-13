@@ -17,18 +17,6 @@ import java.util.stream.Collectors;
 
 public class RandomPlaceListener implements Listener {
 
-    private boolean flag = false;
-
-    /**
-     * このシステムを有効化します
-     */
-    public void makeEnabled() { flag = true; }
-
-    /**
-     * このシステムを無効化します
-     */
-    public void makeDisabled() { flag = false; }
-
     @EventHandler
     private void Blockplace(BlockPlaceEvent e) {
 
