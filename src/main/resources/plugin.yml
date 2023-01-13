@@ -1,0 +1,7 @@
+name: RandomPlace
+version: 1.0
+main: RandomPlace
+authors:
+  - HIYU1576
+  - while_01
+api-version: 1.19
