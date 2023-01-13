@@ -25,10 +25,6 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-    - run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
-    - uses: actions/example@v1
-      with:
-        repo: ${{ env.REPOSITORY_NAME }}
     - name: Gradlew に権限を付与
       run: chmod +x gradlew
     - name: Gradle Shadowjar でJarをビルドしています
@@ -54,6 +50,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./${{ env.REPOSITORY_NAME }}.jar
-        asset_name: ${{ env.REPOSITORY_NAME }}.jar
+        asset_path: ./${{ github.event.repository.name }}.jar
+        asset_name: ${{ github.event.repository.name }}.jar
         asset_content_type: application/zip
