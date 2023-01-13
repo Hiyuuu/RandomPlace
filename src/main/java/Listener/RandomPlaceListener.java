@@ -39,8 +39,8 @@ public class RandomPlaceListener implements Listener {
         Material randomMaterial = blockMaterialList.get(0);
 
         Location block_loc = e.getBlock().getLocation();
-        World world = Bukkit.getWorld("world"); //ここでワールドをゲット、違う世界(ネザー等)なら名前を変更する
-        Block b = world.getBlockAt(block_loc); //ここで座標のブロックをゲット、置きたい座標に自分で変えてください。(x,y,z)
+        World world = Bukkit.getWorld("world");
+        Block b = world.getBlockAt(block_loc);
         b.setType(randomMaterial);
     }
 
