@@ -25,9 +25,10 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-    - name: リポジトリ名取得
-    - run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
-    - uses: actions/example@v1
+    - name: リポジトリ名取得1
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
+    - name: リポジトリ名取得2
+      uses: actions/example@v1
       with:
         repo: ${{ env.REPOSITORY_NAME }}
     - name: Gradlew に権限を付与
