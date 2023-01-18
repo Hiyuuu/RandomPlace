@@ -27,7 +27,7 @@ public class RandomPlaceListener implements Listener {
         Material randomMaterial = blockMaterialList.get(0);
 
         Location block_loc = e.getBlock().getLocation();
-        World world = Bukkit.getWorld("world");
+        World world = block_loc.getWorld();
         Block b = world.getBlockAt(block_loc);
         b.setType(randomMaterial);
     }
